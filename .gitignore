@@ -77,3 +77,6 @@ package-lock.json
 
 # js file that contains and exports my Git token.
 secrets.js
+
+#environment variable files that include both username nad authentication key
+.env
