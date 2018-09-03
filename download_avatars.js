@@ -13,12 +13,16 @@ function getRepoContributors(repoOwner, repoName, cb) {
   };
 
   request(options, function(err, res, body) {
-    cb(err, body);
+    let requested = JSON.parse(body);
+    cb(err, requested);
   });
 
 }
 
 getRepoContributors("jquery", "jquery", function(err, result) {
   console.log("Errors:", err);
-  console.log("Result:", result);
+  for(let i = 0; i < result.length; i++)
+  {
+    console.log(result[i]["avatar_url"]);
+  }
 });
