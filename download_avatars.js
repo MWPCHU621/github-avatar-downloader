@@ -49,11 +49,17 @@ console.log('Welcome to the GitHub Avatar Downloader!');
 
 let myArgs = process.argv.slice(2);
 
-getRepoContributors(myArgs[0], myArgs[1], function(err, result) {
-  console.log("Errors:", err);
-  for(let i = 0; i < result.length; i++)
-  {
-    let filePath = "avatars/" + result[i]["login"];
-    downloadImageByURL(result[i]["avatar_url"], filePath);
-  }
-});
+if(myArgs.length !== 2) {
+  console.log("ERROR. did not provide correct argument count.");
+}
+else {
+  getRepoContributors(myArgs[0], myArgs[1], function(err, result) {
+    console.log("Errors:", err);
+    for(let i = 0; i < result.length; i++)
+    {
+      let filePath = "avatars/" + result[i]["login"];
+      downloadImageByURL(result[i]["avatar_url"], filePath);
+    }
+  });
+}
+
