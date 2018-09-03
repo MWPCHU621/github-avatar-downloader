@@ -74,3 +74,6 @@ typings/
 
 # package.lock json file.
 package-lock.json
+
+# js file that contains and exports my Git token.
+secret.js
