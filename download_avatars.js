@@ -2,7 +2,6 @@ var request = require('request');
 var token = require('./secrets.js');
 var fs = require('fs');
 
-console.log('Welcome to the GitHub Avatar Downloader!');
 
 //gets all of the contributors of a given repo and repo owner
 //and returns an array of objects containing information about the contributors.
@@ -46,8 +45,11 @@ function downloadImageByURL(url, filePath) {
 
 //downloadImageByURL("https://avatars2.githubusercontent.com/u/2741?v=3&s=466", "avatars/kvirani.jpg")
 
+console.log('Welcome to the GitHub Avatar Downloader!');
 
-getRepoContributors("jquery", "jquery", function(err, result) {
+let myArgs = process.argv.slice(2);
+
+getRepoContributors(myArgs[0], myArgs[1], function(err, result) {
   console.log("Errors:", err);
   for(let i = 0; i < result.length; i++)
   {
