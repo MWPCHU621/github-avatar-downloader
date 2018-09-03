@@ -2,6 +2,7 @@
 var request = require('request');
 var token = require('./secrets.js');
 var fs = require('fs');
+var env = require('dotenv').config();
 
 
 //gets all of the contributors of a given repo and repo owner
@@ -11,7 +12,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
     url: "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/contributors",
     headers: {
       'User-Agent': 'request',
-      'myToken' : 'token'
+      'myToken' : 'process.env.KEY'
     }
   };
 
