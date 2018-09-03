@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MWPCHU621/github-avatar-downloader#readme",
   "dependencies": {
+    "dotenv": "^6.0.0",
     "request": "^2.88.0"
   }
 }
